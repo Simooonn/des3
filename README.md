@@ -1,11 +1,11 @@
 ﻿# Hashyoo 3DES
 
-Hashyoo 3DES加密解密，和java,ios互通，使用openssl，必须有openssl扩展
+Hashyoo 3DES加密解密，使用openssl，必须有openssl扩展
 
 ### 安装方法 ###
 
 ```php
-composer require youthage/laravel-3des
+composer require hashyoo/des3
 ```
 
 ### 配置方法 ###
@@ -25,7 +25,7 @@ php artisan vendor:publish --provider="HashyooDes3\Providers\Des3Provider"
 
 namespace App\Http\Controllers;
 
-use DES3;
+use HashyooDes3\Facade\Des3;
 class IndexController extends Controller
 {
     public function index()

@@ -2,9 +2,9 @@
 namespace HashyooDes3\Facade;
 
 use Illuminate\Support\Facades\Facade;
-class Des3 extends Facade {
+class DES3 extends Facade {
     protected static function getFacadeAccessor()
     {
-        return 'Des3';
+        return 'DES3';
     }
 }

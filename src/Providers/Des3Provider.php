@@ -26,7 +26,7 @@ class Des3Provider extends ServiceProvider
     public function register()
     {
         // 在容器中注册
-        $this->app->singleton('Des3', function (){
+        $this->app->singleton('DES3', function (){
             $key = config('hashyoo-des3.DES3_KEY');
             $iv = config('hashyoo-des3.DES3_IV');
             return new Des3Provider($key, $iv);
