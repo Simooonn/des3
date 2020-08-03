@@ -2,6 +2,7 @@
 
 namespace HashyooDes3\Providers;
 
+use HashyooDes3\DES3;
 use Illuminate\Support\ServiceProvider;
 
 class Des3Provider extends ServiceProvider
@@ -29,7 +30,7 @@ class Des3Provider extends ServiceProvider
         $this->app->singleton('DES3', function (){
             $key = config('hashyoo-des3.DES3_KEY');
             $iv = config('hashyoo-des3.DES3_IV');
-            return new Des3Provider($key, $iv);
+            return new DES3($key, $iv);
         });
     }
 }
