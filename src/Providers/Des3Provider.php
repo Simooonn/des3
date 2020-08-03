@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 
 class Des3Provider extends ServiceProvider
 {
+
     /**
      * Bootstrap services.
      *
@@ -15,7 +16,7 @@ class Des3Provider extends ServiceProvider
     public function boot()
     {
         //
-        $path = realpath(__DIR__.'/../../config/config.php');
+        $path = realpath(__DIR__ . '/../../config/config.php');
         $this->publishes(array($path => config_path('hashyoo-des3.php')), 'config');
     }
 
@@ -27,9 +28,9 @@ class Des3Provider extends ServiceProvider
     public function register()
     {
         // 在容器中注册
-        $this->app->singleton('DES3', function (){
+        $this->app->singleton('DES3', function () {
             $key = config('hashyoo-des3.DES3_KEY');
-            $iv = config('hashyoo-des3.DES3_IV');
+            $iv  = config('hashyoo-des3.DES3_IV');
             return new DES3($key, $iv);
         });
     }

@@ -39,8 +39,10 @@ class IndexController extends Controller
         echo $decrypt;
         
         // 动态使用
-        DES3::encrypt(111, 'ABCDEFGHIJKLMNOPQRSTUVWX', '12345678');
-        DES3::decrypt($encrypt, 'ABCDEFGHIJKLMNOPQRSTUVWX', '12345678');
+        $key = 'ABCDEFGHIJKLMNOPQRSTUVWX';
+        $iv =  '12345678';
+        DES3::encrypt(111, $key,$iv);
+        DES3::decrypt($encrypt, $key, $iv);
     }
 }
 

@@ -1,11 +1,15 @@
 <?php
+
 namespace HashyooDes3;
 
 /**
  * Class Des3
+ *
  * @package des3
  */
-class DES3 {
+class DES3
+{
+
     /**
      * @var string
      */
@@ -24,33 +28,35 @@ class DES3 {
      *
      * @throws \Exception
      */
-    public function __construct(string $key=null, string $iv=null)
+    public function __construct(string $key = null, string $iv = null)
     {
-        if(!is_null($key)){
+        if (!is_null($key)) {
             $this->key = $key;
         }
-        if(!is_null($iv)){
+        if (!is_null($iv)) {
             $this->iv = $iv;
         }
 
-        if (strlen($this->key) != 24){
+        if (strlen($this->key) != 24) {
             throw new \Exception("DES3_KEY长度错误，长度为24");
         }
-        if (strlen($this->iv) != 8){
+        if (strlen($this->iv) != 8) {
             throw new \Exception("DES3_IV长度错误，长度为8");
         }
 
     }
 
-    public function encrypt($input, $key='', $iv=''){
+    public function encrypt($input, $key = '', $iv = '')
+    {
         $this->key = $key ? $key : $this->key;
-		$this->iv = $iv ? $iv : $this->iv;
+        $this->iv  = $iv ? $iv : $this->iv;
         return base64_encode(openssl_encrypt($input, "des-ede3-cbc", $this->key, OPENSSL_RAW_DATA, $this->iv));
     }
 
-    public function decrypt($encrypted, $key='', $iv=''){
+    public function decrypt($encrypted, $key = '', $iv = '')
+    {
         $this->key = $key ? $key : $this->key;
-		$this->iv = $iv ? $iv : $this->iv;
+        $this->iv  = $iv ? $iv : $this->iv;
         return openssl_decrypt(base64_decode($encrypted), 'des-ede3-cbc', $this->key, OPENSSL_RAW_DATA, $this->iv);
     }
 
