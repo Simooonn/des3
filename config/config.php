@@ -7,6 +7,6 @@
  */
 
 return array(
-  'DES3_KEY' => '1qaz3edc5tgb2wsx4rfv6yhn',//24位字符
-  'DES3_IV'  => 'cxtt1234',//8位字符
+  'DES3_KEY'=>env('DES3_KEY',null),//24位字符
+  'DES3_IV'=>env('DES3_IV',null),//8位字符
 );
