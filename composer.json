@@ -1,33 +1,39 @@
 {
-    "name": "hashyoo/des3",
-    "description": "Des3解密、加密，对laravel支持更友好",
-    "type": "library",
-    "keywords": [ "php", "laravel", "Des3","解密", "加密"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "damon",
-            "email": "644577519@qq.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "php": ">=5.3.9",
-        "illuminate/support": "*"
-    },
-    "autoload": {
-        "psr-4": {
-            "HashyooDes3\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "HashyooDes3\\Providers\\Des3Provider"
-            ],
-            "aliases": {
-                "DES3": "HashyooDes3\\Facade\\Des3"
-            }
-        }
+  "name": "hashyoo/des3",
+  "description": "Des3解密、加密，对laravel支持更友好",
+  "type": "library",
+  "keywords": [
+    "php",
+    "laravel",
+    "Des3",
+    "解密",
+    "加密"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "damon",
+      "email": "644577519@qq.com"
     }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.3.9",
+    "illuminate/support": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "HashyooDes3\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "HashyooDes3\\Providers\\Des3Provider"
+      ],
+      "aliases": {
+        "DES3": "HashyooDes3\\Facade\\Des3"
+      }
+    }
+  }
 }

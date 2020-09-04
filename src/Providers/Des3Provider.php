@@ -17,7 +17,7 @@ class Des3Provider extends ServiceProvider
     {
         //
         $path = realpath(__DIR__ . '/../../config/config.php');
-        $this->publishes(array($path => config_path('hashyoo-des3.php')), 'config');
+        $this->publishes([$path => config_path('hashyoo-des3.php')], 'config');
     }
 
     /**
