@@ -23,8 +23,8 @@ class DES3
     /**
      * DES3 constructor.
      *
-     * @param \HashyooDes3\string|null $key
-     * @param \HashyooDes3\string|null $iv
+     * @param string|null $key
+     * @param string|null $iv
      *
      * @throws \Exception
      */
